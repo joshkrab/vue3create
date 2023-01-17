@@ -56,4 +56,25 @@ https://www.youtube.com/watch?v=XzLuMtDelGk&list=PL6DxKON1uLOFkn6AgMTYM36aeoODs4
 
 09 First decomposition - 32:00 ----------------------------------------------------------------------------------------------------
 
-  - Create "components" folder and move two components there
+  - Create "components" folder and move three components there
+  - Then import them in App.vue
+
+10 Props - 35:00 -----------------------------------------------------------------------------------------------------------------
+
+  - Send posts array in component
+  - Props cannot be changed in a component - will be error
+
+  - 37:30 In PostForm component create data variables.
+
+11 V-model directive - 39:00 -----------------------------------------------------------------------------------------------------------
+
+  - Instead listener we can write v-model in inputs/lists
+  - Rewrite itputs events with it
+  - Реалізує двобічне зв'язування простіше
+
+12 Create event $emit for send data from child - 43:00 -------------------------------------------------------------------------------------
+
+  - Generate 'create' event in PostForm
+  - Subscribe to this event in App.vue in PostForm
+
+46 minute
