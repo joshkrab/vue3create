@@ -6,13 +6,13 @@
 
     <button class="btn" @click="getWeather">Get weather</button>
 
-    <div class="output">
-      <div class="temperature">{{temperature}}</div>
-      <div class="wind">{{wind}}</div>
-      <div class="pressure">{{pressure}}</div>
+    <div v-bind:class="outClasses.join(' ')">
+      <div>{{temperature}}</div>
+      <div>{{wind}}</div>
+      <div>{{pressure}}</div>
     </div>
 
-    <div class="out404">{{notFound}}</div>
+    <div v-bind:class="out404Classes.join(' ')">{{notFound}}</div>
   </div>
 </template>
 
@@ -26,6 +26,8 @@ export default {
       wind: '',
       pressure: '',
       notFound: '',
+      outClasses: ['output'],
+      out404Classes: ['out404'],
     }
   },
 
@@ -36,18 +38,17 @@ export default {
         return;
       }
 
-      this.temperature = ``;
-      this.wind = ``;
-      this.pressure = ``;
-
-      let { data } = await axios.get(`http://127.0.0.1:1880/weather/${this.city}`);
-      console.log(data);
-      this.city = '';
+      const { data } = await axios.get(`http://127.0.0.1:1880/weather/${this.city}`);
+      // console.log(data);
+      // this.city = '';
 
       if (!data.content.main) {
-        this.notFound = data.content
+        this.notFound = data.content;
+        this.outClasses = ['output'];
+        this.out404Classes.push('show');
       } else {
-        this.notFound = ``;
+        this.out404Classes = ['out404'];
+        this.outClasses.push('show');
         this.temperature = `Temperature: ${Math.round(data.content.main.temp)}°C`;
         this.wind = `Wind: ${Math.round(data.content.wind.speed)}m/s`;
         this.pressure = `Pressure: ${Math.round(data.content.main.pressure * 0.001)}bar`;
@@ -63,5 +64,24 @@ export default {
   margin: 20px 0px 30px 0px;
   display: flex;
   flex-direction: column;
+}
+
+.output,
+.out404 {
+  margin: 10px 0px 0px 0px;
+  padding: 20px;
+  display: none;
+  background-color: rgb(240, 240, 240);
+  box-shadow: 4px 3px 15px 0px #000000;
+  border-radius: 5px;
+}
+
+.out404 {
+  text-transform: uppercase;
+  color: rgb(223, 121, 121);
+}
+
+.show {
+  display: block;
 }
 </style>
