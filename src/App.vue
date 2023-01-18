@@ -1,9 +1,9 @@
 <template>
   <div class="app">
     <Weather />
-    <Likes />
+    <!-- <Likes />
     <PostForm @create="createPost" />
-    <PostList :posts="posts" />
+    <PostList :posts="posts" /> -->
   </div>
 </template>
 
