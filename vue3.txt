@@ -1,39 +1,39 @@
 https://www.youtube.com/watch?v=XzLuMtDelGk&list=PL6DxKON1uLOFkn6AgMTYM36aeoODs4-ny
 
-00 Theory ----------------------------------------------------------------------------------------------------------------------------------------------------
+00 Theory -----------------------------------------------------------------------------
 
   - Virtual DOM - vue accumulates the changes, compares the changes with DOM, then applies the changes to the DOM
   - Компонентний підхід - перевикористання комонентів, вони незалежні
   - Реактивність - реакція, перемалювання змінних з функції data(), які потім використовує директива v-model
 
-01 Installing ---------------------------------------------------------------------------------------------------------------------------------------------------------
+01 Installing -------------------------------------------------------------------------
 
   - Зараз вже новий метод запуску проекта в документації, але робимо по відео:
   - npm install -g @vue/cli - globally
 	- vue create . - in project folder - "." or name
 
-02 Clean project - 10:00 -------------------------------------------------------------------------------------------------------------------------------------------------
+02 Clean project - 10:00 --------------------------------------------------------------
 
   - Public/index.html - remove some lines
   - src - remove everything inside
   - main.js - we keep only one function - createApp(App).mount('#app') - mount root component
 
-03 Create App.vue component - 12:30 ---------------------------------------------------------------------------------------------------------------------------------------
+03 Create App.vue component - 12:30 ---------------------------------------------------
 
   - Create this file and import it in main.js
   - In script section we always export object - it's our component
   - data() return object with variables
   - methods: field for functions
 
-04 Likes/Dislikes - 15:00 -------------------------------------------------------------------------------------------------------------------------------------------
+04 Likes/Dislikes - 15:00 -------------------------------------------------------------
 
   - Create two functions in method field
 
-05 Vue Devtools 17:30 --------------------------------------------------------------------------------------------------------------------------------------------------
+05 Vue Devtools 17:30 -----------------------------------------------------------------
 
   - install it in chrome - beta version for vue3
 
-06 Posts - 19:00 --------------------------------------------------------------------------------------------------------------------------------------------
+06 Posts - 19:00 ----------------------------------------------------------------------
 
   - 'scoped' in styles - only for this component
   - add null styles *{}
@@ -41,38 +41,38 @@ https://www.youtube.com/watch?v=XzLuMtDelGk&list=PL6DxKON1uLOFkn6AgMTYM36aeoODs4
 
   - add 'posts' variable
 
-07 Add post - 23:00 -----------------------------------------------------------------------------------------------------------
+07 Add post - 23:00 -------------------------------------------------------------------
 
   - Add form
   - Add styles for form parts
   - Add function for button
   - Add @submit.prevent to form, instead event.preventDefault()
 
-08 Двобічне зв'язування - 26:00 -------------------------------------------------------------------------------------------------
+08 Двобічне зв'язування - 26:00 -------------------------------------------------------
 
   - Add two models (variables): title and body
   - Add directive v-bind to inputs for relation data with component
   - Add @input event to inputs
 
-09 First decomposition - 32:00 ----------------------------------------------------------------------------------------------------
+09 First decomposition - 32:00 --------------------------------------------------------
 
   - Create "components" folder and move three components there
   - Then import them in App.vue
 
-10 Props - 35:00 -----------------------------------------------------------------------------------------------------------------
+10 Props - 35:00 ----------------------------------------------------------------------
 
   - Send posts array in component
   - Props cannot be changed in a component - will be error
 
   - 37:30 In PostForm component create data variables.
 
-11 V-model directive - 39:00 -----------------------------------------------------------------------------------------------------------
+11 V-model directive - 39:00 ----------------------------------------------------------
 
   - Instead listener we can write v-model in inputs/lists
   - Rewrite itputs events with it
   - Реалізує двобічне зв'язування простіше
 
-12 Create event $emit for send data from child - 43:00 -------------------------------------------------------------------------------------
+12 Create event $emit for send data from child - 43:00 --------------------------------
 
   - Generate 'create' event in PostForm
   - Subscribe to this event in App.vue in PostForm
