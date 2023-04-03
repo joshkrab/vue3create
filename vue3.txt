@@ -5,8 +5,11 @@ https://www.youtube.com/watch?v=XzLuMtDelGk&list=PL6DxKON1uLOFkn6AgMTYM36aeoODs4
   - Virtual DOM - vue accumulates the changes, compares the changes with DOM, then applies the changes to the DOM
   - Компонентний підхід - перевикористання комонентів, вони незалежні
   - Реактивність - реакція, перемалювання змінних з функції data(), які потім використовує директива v-model
+  - Змінні в data() називаються моделями.
 
-01 Installing -------------------------------------------------------------------------
+  - Патерн підхід: Single file component
+
+01 Installing - 7:50 ------------------------------------------------------------------------
 
   - Зараз вже новий метод запуску проекта в документації, але робимо по відео:
   - npm install -g @vue/cli - globally
@@ -18,7 +21,7 @@ https://www.youtube.com/watch?v=XzLuMtDelGk&list=PL6DxKON1uLOFkn6AgMTYM36aeoODs4
   - src - remove everything inside
   - main.js - we keep only one function - createApp(App).mount('#app') - mount root component
 
-03 Create App.vue component - 12:30 ---------------------------------------------------
+03 Create root App.vue component - 12:30 ---------------------------------------------------
 
   - Create this file and import it in main.js
   - In script section we always export object - it's our component
@@ -28,10 +31,11 @@ https://www.youtube.com/watch?v=XzLuMtDelGk&list=PL6DxKON1uLOFkn6AgMTYM36aeoODs4
 04 Likes/Dislikes - 15:00 -------------------------------------------------------------
 
   - Create two functions in method field
+  - {{ interpolation }}
 
 05 Vue Devtools 17:30 -----------------------------------------------------------------
 
-  - install it in chrome - beta version for vue3
+  - install it in chrome - beta version for vue3 - not relevant
 
 06 Posts - 19:00 ----------------------------------------------------------------------
 
@@ -61,6 +65,9 @@ https://www.youtube.com/watch?v=XzLuMtDelGk&list=PL6DxKON1uLOFkn6AgMTYM36aeoODs4
 
 10 Props - 35:00 ----------------------------------------------------------------------
 
+  - v-on:click === @click - for events
+  - v-bind:posts === :posts - for props
+
   - Send posts array in component
   - Props cannot be changed in a component - will be error
 
@@ -70,11 +77,37 @@ https://www.youtube.com/watch?v=XzLuMtDelGk&list=PL6DxKON1uLOFkn6AgMTYM36aeoODs4
 
   - Instead listener we can write v-model in inputs/lists
   - Rewrite itputs events with it
-  - Реалізує двобічне зв'язування простіше
+  - Реалізує двобічне зв'язування з моделлю простіше
 
 12 Create event $emit for send data from child - 43:00 --------------------------------
 
   - Generate 'create' event in PostForm
-  - Subscribe to this event in App.vue in PostForm
+  - Subscribe to this event in App.vue in PostForm attributes
 
-46 minute
+13 PostItem - 46:00 -------------------------------------------------------------------
+
+  - 
+
+14 Create separate btn component - 50:00 -------------------------------------------------
+
+  - Create UI folder
+  - All directives, classes in atributes applied to the root element in component
+
+15 ReUse components without imports - 54:00 -------------------------------------------------
+
+  - In UI folder create index.js
+  - import these components in main.js
+  - register all components there:  app.component(component.name, component);
+
+16 Reusable INPUT component - 56:50 --------------------------------------------------------
+
+  - In props we need to receive modelValue from v-model
+  - Bind modelValue like value in input
+  - Add input event in input
+  - Add updateInput method with emit 'update'
+
+17 We can bind specific attribute v-model:value="post.title" - 1:02 -------------------------
+
+  - In vue 3 we can add several v-model:
+
+1:03
