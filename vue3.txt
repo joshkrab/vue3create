@@ -110,4 +110,4 @@ https://www.youtube.com/watch?v=XzLuMtDelGk&list=PL6DxKON1uLOFkn6AgMTYM36aeoODs4
 
   - In vue 3 we can add several v-model:
 
-1:03
+1:03 https://www.youtube.com/watch?v=XzLuMtDelGk&list=PL6DxKON1uLOFkn6AgMTYM36aeoODs4-ny
