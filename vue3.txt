@@ -110,4 +110,59 @@ https://www.youtube.com/watch?v=XzLuMtDelGk&list=PL6DxKON1uLOFkn6AgMTYM36aeoODs4
 
   - In vue 3 we can add several v-model:
 
-1:03 https://www.youtube.com/watch?v=XzLuMtDelGk&list=PL6DxKON1uLOFkn6AgMTYM36aeoODs4-ny
+18 Delete post - 1:03 ------------------------------------------------------------------------
+
+  - Make evvent emits from PostItem to PostList, and from PostList to App.vue
+
+19 v-if - 1:07 --------------------------------------------------------------------------------
+
+  - If there are no posts - show something
+  - v-show - Does not remove posts from the DOM
+
+20 Modal - MyDialog.vue - 1:10 -----------------------------------------------------------------
+
+  - Write structure in MyDialog.vue, conntect in index.js in UI
+  - Put PostForm in this component in App.vue
+
+  - event.stopPropagation() - заборона вспливання: @click.stop
+
+21 v-model modificators 1:16 --------------------------------------------------------------------
+
+  - v-model.trim="modificatorValue" - remove spaces
+  - v-model.number="modificatorValue" - string to number type
+
+22 jsonplaceholder - 1:17 -------------------------------------------------------------------------
+
+  - In App.vue make fetchPosts method:
+  - npm i axios
+
+23 Component life cycles - 1:20 -------------------------------------------------------------------
+
+  - Add mouted() for fetch posts
+  - Add setTimeout() for visualization proccess
+
+24 Sorting - 1:24 ---------------------------------------------------------------------------------
+
+  - Add MySelect component
+  - localeCompare - Compares strings, returns -1 or 0 or 1
+
+25 Watch, Computed --------------------------------------------------------------------------------------
+
+  - Watch - the function will work when changing the model
+  - Computed - the function will work depending on the nested models when they change 
+               and return something
+
+  - Watch for nested object properties:  watch: {
+                                            post: {
+                                              handler(newValue) {
+                                                console.log(newValue);
+                                              },
+                                              deep: true,
+                                            },
+                                          },
+
+  - Made sorting with watch, and then with computed
+
+26 Animation - 1:39 --------------------------------------------------------------------------------------
+
+  - https://www.youtube.com/watch?v=XzLuMtDelGk&list=PL6DxKON1uLOFkn6AgMTYM36aeoODs4-ny

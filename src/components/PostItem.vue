@@ -5,22 +5,20 @@
       <div><strong>Description:</strong> {{ post.body }}</div>
     </div>
     <div class="btns">
-      <my-button>Delete</my-button>
+      <my-button @click="$emit('remove', post)">Delete</my-button>
     </div>
   </div>
 </template>
 
 <script>
-
 export default {
   props: {
     post: {
       type: Object,
       required: true,
-    }
-  }
-
-}
+    },
+  },
+};
 </script>
 <style>
 .post {
